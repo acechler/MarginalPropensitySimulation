@@ -30,20 +30,24 @@ class Entity(object):
         self.__name = name
         self.__money = money
 
+    # Give entity money.
     def add_money(self, amt):
         self.__money += amt
         print(self.__name + " has been given $", amt)
 
+    # Show how much money an entity has.
     def show_money(self):
         print(self.__name + " has $", self.__money)
 
+    # Have an entity give money to another entity.
     def give_money(self, entity):
         amt = self.__money * MPC
         entity.add_money(amt)
         self.__money -= amt
 
 
-if __name__ == '__main__':
+# Run a basic test between two entities
+def entity_test():
     salesmen = Entity(name="Salesmen", money=0)
     merchant = Entity(name="Merchant", money=0)
 
@@ -55,3 +59,6 @@ if __name__ == '__main__':
     salesmen.show_money()
     merchant.show_money()
 
+
+if __name__ == '__main__':
+    entity_test()
