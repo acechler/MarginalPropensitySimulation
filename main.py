@@ -12,39 +12,8 @@
 #       They will save $20 * MPS(0.4) = $8
 #       12 + 8 = 20
 #
-
-
-MPS = 0.4
-MPC = 0.6
-
-
-##
-#       Entity is an object that has a name and has money.
-#    Entity can receive money and give money to another Entity
-#
-class Entity(object):
-    __name = ""
-    __money = 0
-
-    def __init__(self, name, money):
-        self.__name = name
-        self.__money = money
-
-    # Give entity money.
-    def add_money(self, amt):
-        self.__money += amt
-        print(self.__name + " has been given $", amt)
-
-    # Show how much money an entity has.
-    def show_money(self):
-        print(self.__name + " has $", self.__money)
-
-    # Have an entity give money to another entity.
-    def give_money(self, entity):
-        amt = self.__money * MPC
-        entity.add_money(amt)
-        self.__money -= amt
-
+from entity import *
+from consumable import *
 
 # Run a basic test between two entities
 def entity_test():
@@ -59,6 +28,11 @@ def entity_test():
     salesmen.show_money()
     merchant.show_money()
 
+# Run a basic test that initializes an apple item
+def consumable_test():
+    apple = Consumable(name='apple', value=2.00)
+    apple.info()
 
 if __name__ == '__main__':
     entity_test()
+    consumable_test()
