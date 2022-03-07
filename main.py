@@ -15,6 +15,7 @@
 from entity import *
 from consumable import *
 
+
 # Run a basic test between two entities
 def entity_test():
     salesmen = Entity(name="Salesmen", money=0)
@@ -28,10 +29,12 @@ def entity_test():
     salesmen.show_money()
     merchant.show_money()
 
+
 # Run a basic test that initializes an apple item
 def consumable_test():
     apple = Consumable(name='apple', value=2.00)
     apple.info()
+
 
 if __name__ == '__main__':
     entity_test()
