@@ -30,6 +30,7 @@ def entity_test():
     merchant.show_money()
 
 
+
 # Run a basic test that initializes an apple item
 def consumable_test():
     apple = Consumable(name='apple', value=2.00)
